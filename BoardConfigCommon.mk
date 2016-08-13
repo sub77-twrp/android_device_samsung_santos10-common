@@ -23,8 +23,12 @@ TARGET_BOOTLOADER_BOARD_NAME := clovertrail
 TARGET_BOARD_PLATFORM := clovertrail
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/santos10
-TARGET_KERNEL_CONFIG := twrp_santos10_defconfig
+TARGET_PREBUILT_KERNEL := device/samsung/santos10-common/bzImage
+
+ifndef TARGET_PREBUILT_KERNEL
+	TARGET_KERNEL_SOURCE := kernel/samsung/santos10
+	TARGET_KERNEL_CONFIG := twrp_santos10_defconfig
+endif
 
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := bzImage
