@@ -1,0 +1,40 @@
+From e3022b2086e792a8ba2b26116afdd546e135afd6 Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Sat, 13 Aug 2016 03:26:31 +0000
+Subject: [PATCH] Tab3 Patch 2
+
+Change-Id: If52e3d3b0598a7b895bfba0f42c13e5103af39cf
+---
+ busybox-full.config    | 2 +-
+ busybox-minimal.config | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/busybox-full.config b/busybox-full.config
+index 95664c4..9646b0d 100644
+--- a/busybox-full.config
++++ b/busybox-full.config
+@@ -22,7 +22,7 @@ CONFIG_FEATURE_BUFFERS_USE_MALLOC=y
+ # CONFIG_FEATURE_BUFFERS_GO_IN_BSS is not set
+ CONFIG_SHOW_USAGE=y
+ CONFIG_FEATURE_VERBOSE_USAGE=y
+-CONFIG_FEATURE_COMPRESS_USAGE=y
++CONFIG_FEATURE_COMPRESS_USAGE=n
+ CONFIG_FEATURE_INSTALLER=y
+ CONFIG_INSTALL_NO_USR=y
+ # CONFIG_LOCALE_SUPPORT is not set
+diff --git a/busybox-minimal.config b/busybox-minimal.config
+index ad8574f..0c9b6a9 100644
+--- a/busybox-minimal.config
++++ b/busybox-minimal.config
+@@ -22,7 +22,7 @@ CONFIG_FEATURE_BUFFERS_USE_MALLOC=y
+ # CONFIG_FEATURE_BUFFERS_GO_IN_BSS is not set
+ CONFIG_SHOW_USAGE=y
+ CONFIG_FEATURE_VERBOSE_USAGE=y
+-CONFIG_FEATURE_COMPRESS_USAGE=y
++CONFIG_FEATURE_COMPRESS_USAGE=n
+ # CONFIG_FEATURE_INSTALLER is not set
+ CONFIG_INSTALL_NO_USR=y
+ # CONFIG_LOCALE_SUPPORT is not set
+-- 
+2.5.0
+

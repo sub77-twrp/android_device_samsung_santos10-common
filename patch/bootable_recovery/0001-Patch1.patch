@@ -1,0 +1,26 @@
+From 695f843f3349c4c449aef3f355b31a07757213ec Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Sat, 13 Aug 2016 04:03:50 +0000
+Subject: [PATCH] Patch1
+
+Change-Id: Iff7eda573258d5a65b8e4373b591b1f7919e9827
+---
+ twrpTar.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/twrpTar.cpp b/twrpTar.cpp
+index b46f10f..0c9537b 100644
+--- a/twrpTar.cpp
++++ b/twrpTar.cpp
+@@ -135,7 +135,7 @@ int twrpTar::createTarFork(ProgressTracking *progress, pid_t &fork_pid) {
+ 			pthread_attr_t tattr;
+ 			void *thread_return;
+ 
+-			core_count = sysconf(_SC_NPROCESSORS_CONF);
++			core_count = 1;
+ 			if (core_count > 8)
+ 				core_count = 8;
+ 			LOGINFO("   Core Count      : %u\n", core_count);
+-- 
+2.5.0
+
