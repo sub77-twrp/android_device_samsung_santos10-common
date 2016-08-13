@@ -11,6 +11,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE))
 	@echo -e ${PRT_IMG}"----- Made recovery image: $@ --------"${CL_RST}
 	@echo -e ${PRT_IMG}"----- Making odin recovery image ------"${CL_RST}
+	cd $(PRODUCT_OUT) && cp recovery.img $(TWRP_NAME).img
 	cd $(PRODUCT_OUT) && tar -H ustar -c $(shell basename $@) > $(TWRP_NAME).tar
 	cd $(PRODUCT_OUT) && md5sum -t $(TWRP_NAME).tar >> $(TWRP_NAME).tar
 	mv $(PRODUCT_OUT)/$(TWRP_NAME).tar $(PRODUCT_OUT)/$(TWRP_NAME).tar.md5
